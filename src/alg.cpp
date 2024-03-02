@@ -13,7 +13,7 @@ bool checkPrime(uint64_t value) {
         return false;
     } else {
         for (int i = 3; i < value / 2; i += 2) {
-            if (!(value / i)) {
+            if (!(value % i)) {
                 return false;
             }
         }
