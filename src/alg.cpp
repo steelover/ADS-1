@@ -34,19 +34,10 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-    if (value <= 1) {
-        return nextPrime(value + 1);
-    }
-    if (checkPrime(value)) {
-        int q = 0;
-        for (int j = 1;; j++) {
-            if (nPrime(j) == value) {
-                q = j;
-            }
-            return nPrime(q + 1);
+    for (uint64_t i = value + 1;; i++) {
+        if (checkPrime(i)) {
+            return i;
         }
-    } else {
-        return nextPrime(value - 1);
     }
 }
 
